@@ -15,7 +15,11 @@ some character not listed above.
 
 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 //tested by Samraddhi
+=======
+//Tested by Maanvi
+>>>>>>> 3017bf554dfb3664079972c3014f3d0163dbea29
 =======
 /*
 tested by seerat
