@@ -1,8 +1,14 @@
-#include <stdio.h>              //  Include information about standard library
+#include<stdio.h>              //  Include information about standard library
 int main()                          //  define a function called main that received no argument values
 {                               //  statements of main are enclosed in braces
-    printf("hello, world\n");      //  main calls library function printf
+<<<<<<< HEAD
+    printf("Hello world !!!!\n"); // Edited by Sonal       //  main calls library function printf
     return 0;                            //  to print this sequence of characters
+=======
+    printf("hello, world\n");      //  main calls library function printf
+    //printf("Tested by sonali");
+    return 0;       //  to print this sequence of characters
+>>>>>>> ae4e4d738889a43413dab8548b21c5c3171194fe
 } 
 
 /*
@@ -13,4 +19,19 @@ Exercise 1−2. Experiment to find out what happens when prints's argument strin
 some character not listed above.
 
 */
+<<<<<<< HEAD
 //Tested by Manasvi Sharma
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+//tested by Samraddhi
+=======
+//Tested by Maanvi
+>>>>>>> 3017bf554dfb3664079972c3014f3d0163dbea29
+=======
+/*
+tested by seerat
+first program
+*/
+>>>>>>> 61a385b460fd83fa85acdc38eae443ea8383427a
+>>>>>>> 900c976a650a569dfcf4edc3e75066e17b9e8b2f
