@@ -3,8 +3,8 @@ void main()                          //  define a function called main
 {   
     int i;
     for(i=0;i<5;i++)
-        {
-    puts("Hello world...\n"); // prints the string and adds a newline automatically
+    {
+        puts("Hello world...\n"); // prints the string and adds a newline automatically
     }
                           
 }
@@ -16,5 +16,3 @@ Exercise 1−2. Experiment to find out what happens when prints's argument strin
 some character not listed above.
 */
 
->>>>>>> 61a385b460fd83fa85acdc38eae443ea8383427a
->>>>>>> 900c976a650a569dfcf4edc3e75066e17b9e8b2f
