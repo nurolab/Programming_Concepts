@@ -3,8 +3,8 @@ int main()                          //  define a function called main
 {   
     int i;
     for(i=0;i<5;i++) //loop prints string 5 times
-        {
-    puts("Hello world.."); // prints the string and adds a newline automatically
+    {
+         puts("Hello world.."); // prints the string and adds a newline automatically
     }
                           
 }
