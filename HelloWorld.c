@@ -1,7 +1,11 @@
 #include <stdio.h>              //  Include information about standard library
 void main()                          //  define a function called main
-{              
-    puts("Hello, world!");       // prints the string and adds a newline automatically
+{   
+    int i;
+    for(i=0;i<5;i++)
+        {
+    puts("Hello world...\n"); // prints the string and adds a newline automatically
+    }
                           
 }
 /*
