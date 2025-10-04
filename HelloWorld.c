@@ -3,7 +3,7 @@ int main()                          //  define a function called main that recei
 {              
     printf("Hello world !!!!\n");    //  main calls library function printf
     return 0;                            //  to print this sequence of characters
->>>>>>> ae4e4d738889a43413dab8548b21c5c3171194fe
+
 } 
 
 /*
