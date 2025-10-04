@@ -1,8 +1,8 @@
-#include<stdio.h>              //  Include information about standard library
-int main()                          //  define a function called main that received no argument values
+#include <stdio.h>              //  Include information about standard library
+void main()                          //  define a function called main
 {              
     puts("Hello, world!");       // prints the string and adds a newline automatically
-    return 0;                            //  to print this sequence of characters
+                          
 }
 /*
 Exercise 1−1. Run the ``hello, world'' program on your system. Experiment with leaving out parts of the
