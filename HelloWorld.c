@@ -1,10 +1,9 @@
 #include<stdio.h>              //  Include information about standard library
 int main()                          //  define a function called main that received no argument values
 {              
-    printf("Hello world !!!!\n");    //  main calls library function printf
+    puts("Hello, world!");       // prints the string and adds a newline automatically
     return 0;                            //  to print this sequence of characters
-} 
-
+}
 /*
 Exercise 1−1. Run the ``hello, world'' program on your system. Experiment with leaving out parts of the
 program, to see what error messages you get.
