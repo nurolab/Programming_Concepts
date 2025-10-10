@@ -1,24 +1,18 @@
-/*
-Quality control - The code provides the functionality of conversion of Fahrenheight to Celsius
-You have to improve the source code to make it readable, efficient, robust etc.
-*/
-
 #include <stdio.h>
-/* print Fahrenheit−Celsius table
-for fahr = 0, 20, ++++ 300 */
-int main()
-{
-int fahr, celsius;
-int lower, upper, step;
-lower = 0;    /* lower limit    of temperature scale       */
-upper = 300;    /* upper limit       */
-step = 20;/* step size */
-fahr = lower;
-while (fahr <= upper) {
-celsius = 5 * (fahr-32) / 9;
-printf("%d\t%d\n", fahr, celsius);
-fahr = fahr + step;
-}
-return 0;
-}
 
+int main(void)
+{
+    const int LOWER = 0;      // Lower limit of temperature scale
+    const int UPPER = 300;    // Upper limit
+    const int STEP = 20;      // Step size
+
+    printf("Fahrenheit\tCelsius\n");
+    printf("-----------------------\n");
+
+    for (int fahr = LOWER; fahr <= UPPER; fahr += STEP) {
+        float celsius = (5.0f / 9.0f) * (fahr - 32);
+        printf("%10d\t%7.2f\n", fahr, celsius);
+    }
+
+    return 0;
+}
