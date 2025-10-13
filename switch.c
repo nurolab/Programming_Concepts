@@ -1,10 +1,10 @@
 #include <stdio.h>
-#include <ctype.h>
+//#include <ctype.h> is unneccessary in this code as we did'nt use any character classification function here.
 int main()
  {  
     int c, i, nwhite, nother, ndigit[10];
     nwhite = nother = 0;
-    c=89;
+    //c=89 is unnecessary bcoz c=getchar() overwrite it before use.
 
     for (i = 0; i < 10; i++)
     {
