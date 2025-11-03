@@ -24,8 +24,8 @@ int main() {
     int arr[SIZE];
     int i;
     clock_t start, end;
+    double cpu_time_used;
 
-    // Seed the random number generator
     srand(time(NULL));
 
     // Fill the array with 1 lakh (100,000) random values
@@ -42,7 +42,13 @@ int main() {
 
     end = clock(); // Record the ending time
 
-    printf("Time taken to sort elements: %f seconds\n",  end);
+    // Calculate the CPU time used
+
+    printf("Array sorted using Bubble Sort.\n");
+     cpu_time_used = ((double)(end - start)); // CLOCKS_PER_SEC;
+
+
+    printf("Time taken to sort %d elements: %f seconds\n", SIZE, cpu_time_used);
 
    
     return 0;
