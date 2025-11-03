@@ -1,63 +1,50 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
 
-
-// Function to swap two integers
-void swap(int *xp, int *yp) {
-    int temp = *xp;
-    *xp = *yp;
-    *yp = temp;
-}
-
 // Function to perform Selection Sort
-
 void selectionSort(int arr[], int n) {
-    
-
-    int i, j, min_idx;
-
-    // One by one move boundary of unsorted subarray
+    int i, j, minIndex, temp;
     for (i = 0; i < n - 1; i++) {
-        // Find the minimum element in unsorted array
-        min_idx = i;
+        minIndex = i;
         for (j = i + 1; j < n; j++) {
-            if (arr[j] < arr[min_idx]) {
-                min_idx = j;
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
             }
         }
-
-        // Swap the found minimum element with the first element of the unsorted part
-        swap(&arr[min_idx], &arr[i]);
+        // Swap the found minimum element with the first element
+        temp = arr[minIndex];
+        arr[minIndex] = arr[i];
+        arr[i] = temp;
     }
-       
-
-
 }
 
-// Function to print an array
-void printArray(int arr[], int size) {
-    int i;
-    for (i = 0; i < size; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
-}
-
-// Main function to test the selection sort
 int main() {
-    int arr[] = {64, 25, 12, 22, 11};
-    int n = sizeof(arr) / sizeof(arr[0]);
-   clock_t start,end ;
-       start=clock();
-    printf("Original array: ");
-    printArray(arr, n);
+    int n = 100000;  // Size of the array
+    int arr[n];
     
-    selectionSort(arr, n);
-    printf("Selection Sorted array: ");
+    // Initialize random seed
+    srand(time(NULL));
 
-    printArray(arr, n);
-    end=clock();
-    printf("Total time taken by CPU: %f\n", end);
+    // Generate random values for the array
+    for (int i = 0; i < n; i++) {
+        arr[i] = rand() % 10000; 
+    }
+
+    // Get the starting time
+    clock_t start_time = clock();
+
+    // Perform Selection Sort
+    selectionSort(arr, n);
+
+    // Get the ending time
+    clock_t end_time = clock();
+
+    // Calculate the elapsed time
+    double time_taken = ((double)(end_time - start_time)) / CLOCKS_PER_SEC;
+
+    // Print the time taken to sort the array
+    printf("Selection Sort completed in %f seconds\n", time_taken);
 
     return 0;
 }
