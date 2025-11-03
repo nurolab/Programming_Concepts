@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -42,3 +43,57 @@ int main() {
     free(arr);
     return 0;
 }
+=======
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void bubble(int *a, int n) {
+    for (int i = 0, swapped = 1; i < n - 1 && swapped; i++) {
+        swapped = 0;
+        for (int j = 0; j < n - i - 1; j++) {
+            if (a[j] > a[j + 1]) {
+                int t = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = t;
+                swapped = 1;
+            }
+        }
+    }
+}
+
+int main() {
+    int n;
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    int *arr = malloc(n * sizeof(int));
+    if (!arr) { printf("Memory allocation failed!\n"); return 1; }
+
+    srand((unsigned)time(NULL));
+    for (int i = 0; i < n; i++)
+        arr[i] = rand() % 10000; // random numbers
+
+    clock_t t0 = clock();
+    bubble(arr, n);
+    clock_t t1 = clock();
+
+    double sec = (double)(t1 - t0) / CLOCKS_PER_SEC;
+    double ms = sec * 1000;
+
+    // Print array preview
+    printf("\nSorted elements preview:\n");
+    if (n <= 50) {
+        for (int i = 0; i < n; i++) printf("%d ", arr[i]);
+    } else {
+        for (int i = 0; i < 5; i++) printf("%d ", arr[i]);
+        printf("... ");
+        for (int i = n - 5; i < n; i++) printf("%d ", arr[i]);
+    }
+
+    printf("\n\nTime used: %.9f s (%.3f ms)\n", sec, ms);
+
+    free(arr);
+    return 0;
+}
+>>>>>>> Stashed changes
