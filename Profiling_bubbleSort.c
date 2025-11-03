@@ -1,15 +1,14 @@
 #include <stdio.h>
-#include <time.h> // For clock() and CLOCKS_PER_SEC
+#include <stdlib.h>
+#include <time.h>
 
-// Function to perform Bubble Sort
+// Bubble Sort Function
 void bubbleSort(int arr[], int n) {
-    int i, j;
+    int i, j, temp;
     for (i = 0; i < n - 1; i++) {
-        // Last i elements are already in place
         for (j = 0; j < n - i - 1; j++) {
-            // Swap if the element found is greater than the next element
             if (arr[j] > arr[j + 1]) {
-                int temp = arr[j];
+                temp = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
             }
@@ -17,33 +16,36 @@ void bubbleSort(int arr[], int n) {
     }
 }
 
-// Function to print an array
-void printArray(int arr[], int size) {
-    int i;
-    for (i = 0; i < size; i++)
+// Print Array Function (only used for small n)
+void printArray(int arr[], int n) {
+    for (int i = 0; i < n; i++)
         printf("%d ", arr[i]);
     printf("\n");
 }
 
 int main() {
-    int arr[] = {64, 34, 25, 12, 22, 11, 90};
-    int n = sizeof(arr) / sizeof(arr[0]);
+    int n = 10000; // Change size for testing
+    int arr[n];
 
-    printf("Original array: \n");
-    printArray(arr, n);
+    // Seed random generator
+    srand(time(NULL));
 
-    clock_t start_time = clock(); // Record the start time
+    // Fill array with random numbers
+    for (int i = 0; i < n; i++) {
+        arr[i] = rand() % 100000; // Random digits
+    }
 
-    bubbleSort(arr, n); // Perform bubble sort
+    printf("Sorting %d random elements using Bubble Sort...\n", n);
 
-    clock_t end_time = clock(); // Record the end time
+    clock_t start_time = clock(); // Start time
 
-    printf("Sorted array: \n");
-    printArray(arr, n);
+    bubbleSort(arr, n);
 
-    // Calculate and print the execution time
+    clock_t end_time = clock(); // End time
+
+    // Calculate time taken
     double execution_time = (double)(end_time - start_time) / CLOCKS_PER_SEC;
-    printf("Execution time: %f seconds\n", execution_time);
+    printf("Execution Time: %f seconds\n", execution_time);
 
     return 0;
 }
