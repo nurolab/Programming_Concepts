@@ -2,62 +2,48 @@
 #include <stdlib.h> // For rand() and srand()
 #include <time.h>   // For clock(), CLOCKS_PER_SEC, and time()
 
-#define ARRAY_SIZE 100000
+#define SIZE 100000 // Define the size of the array
 
-// Function to swap two integers
-void swap(int *xp, int *yp) {
-    int temp = *xp;
-    *xp = *yp;
-    *yp = temp;
-}
-
-// Bubble Sort function
+// Function to perform Bubble Sort
 void bubbleSort(int arr[], int n) {
     int i, j;
     for (i = 0; i < n - 1; i++) {
         // Last i elements are already in place
         for (j = 0; j < n - i - 1; j++) {
             if (arr[j] > arr[j + 1]) {
-                swap(&arr[j], &arr[j + 1]);
+                // Swap if the element found is greater than the next element
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
             }
         }
     }
 }
 
 int main() {
-    int arr[ARRAY_SIZE];
-    int n = ARRAY_SIZE;
+    int arr[SIZE];
+    int i;
+    clock_t start, end;
 
     // Seed the random number generator
     srand(time(NULL));
 
-    // Populate the array with random values
-    printf("Generating %d random values...\n", ARRAY_SIZE);
-    for (int i = 0; i < n; i++) {
-        arr[i] = rand() % 1000000; // Random values between 0 and 999,999
+    // Fill the array with 1 lakh (100,000) random values
+    printf("Generating %d random numbers...\n", SIZE);
+    for (i = 0; i < SIZE; i++) {
+        arr[i] = rand(); // Generate a random integer
     }
-    printf("Values generated.\n");
+    printf("Random numbers generated.\n");
 
-    // Measure time taken for bubble sort
-    clock_t start_time = clock();
+    // Measure the time taken for Bubble Sort
+    start = clock(); // Record the starting time
 
-    printf("Starting Bubble Sort...\n");
-    bubbleSort(arr, n);
-    printf("Bubble Sort completed.\n");
+    bubbleSort(arr, SIZE); // Sort the array
 
-    clock_t end_time = clock();
+    end = clock(); // Record the ending time
 
-    // Calculate the elapsed time in seconds
-    double time_taken = (double)(end_time - start_time) / CLOCKS_PER_SEC;
+    printf("Time taken to sort elements: %f seconds\n",  end);
 
-    printf("Time taken for Bubble Sort on %d values: %f seconds\n", ARRAY_SIZE, time_taken);
-
-    // Optional: Print a few sorted elements to verify (not recommended for 100,000 elements)
-    // printf("First 10 sorted elements: ");
-    // for (int i = 0; i < 10; i++) {
-    //     printf("%d ", arr[i]);
-    // }
-    // printf("\n");
-
+   
     return 0;
 }
