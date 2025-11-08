@@ -21,13 +21,13 @@ int main(){
     start_time=clock();
     my_for_func();
     end_time=clock();
-    double time_for=(double) (end_time - start_time) / CLOCKS_PER_SEC;
+    double time_for=(double) (end_time - start_time);
     start_time=clock();
      my_while_func();
     end_time=clock();
-    double time_while=(double) (end_time - start_time) / CLOCKS_PER_SEC;
+    double time_while=(double) (end_time - start_time); 
     printf("Profiling report:\n");
-    printf("Function my_for_func() took **%f seconds** of CPU time to execute.\n",time_for);
-    printf("Function my_while_func() took **%f seconds** of CPU time to execute.\n",time_while);
+    printf("For : %.2f seconds .\n",time_for);
+    printf("While: %.2f seconds.\n",time_while);
     return 0;
 }
