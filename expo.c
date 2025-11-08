@@ -26,7 +26,7 @@ long long power_bitwise(int base, int exp)
 
 int main() 
 {
-    int base = 2, exp = 6789;
+    int base = 2, exp = 30;
     long long res1, res2;
     double t1, t2;
     struct timespec start, end;
@@ -53,3 +53,4 @@ int main()
 
     return 0;
 }
+
