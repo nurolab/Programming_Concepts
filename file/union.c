@@ -1,22 +1,29 @@
 #include <stdio.h>
 
-union data {
+union Data {
     int i;
     float f;
-    char ch;
+    char c;
 };
 
 int main() {
-    union data d;
+    union Data d;
 
-    d.i = 10;
-    printf("Integer: %d\n", d.i);
+    // Store integer
+    d.i = 100;
+    printf("After storing integer:\n");
+    printf("i = %d, f = %.2f, c = %c\n", d.i, d.f, d.c);
 
-    d.f = 5.5;
-    printf("Float: %.2f\n", d.f);
+    // Store float
+    d.f = 25.5;
+    printf("\nAfter storing float:\n");
+    printf("i = %d, f = %.2f, c = %c\n", d.i, d.f, d.c);
 
-    d.ch = 'A';
-    printf("Character: %c\n", d.ch);
+    // Store char
+    d.c = 'A';
+    printf("\nAfter storing char:\n");
+    printf("i = %d, f = %.2f, c = %c\n", d.i, d.f, d.c);
 
     return 0;
 }
+
